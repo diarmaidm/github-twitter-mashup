@@ -1,0 +1,22 @@
+{
+  "name": "github-twitter-mashup",
+  "version": "0.0.1",
+  "description": "Command line API mashup of github and twitter APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "github",
+    "twitter",
+    "mashup",
+    "api"
+  ],
+  "author": "Diarmaid McGowan",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.1.1",
+    "standard": "^11.0.1"
+  }
+}
