@@ -4,7 +4,8 @@
   "description": "Command line API mashup of github and twitter APIs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "style": "node_modules/.bin/standard",
+    "test": "node node_modules/.bin/mocha"
   },
   "keywords": [
     "github",
@@ -14,9 +15,19 @@
   ],
   "author": "Diarmaid McGowan",
   "license": "MIT",
+  "dependencies": {
+    "request": "^2.85.0"
+  },
   "devDependencies": {
     "chai": "^4.1.2",
     "mocha": "^5.1.1",
     "standard": "^11.0.1"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "it",
+      "expect"
+    ]
   }
 }
