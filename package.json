@@ -2,10 +2,11 @@
   "name": "github-twitter-mashup",
   "version": "0.0.1",
   "description": "Command line API mashup of github and twitter APIs",
-  "main": "index.js",
+  "main": "mashup-promise.js",
   "scripts": {
     "style": "node_modules/.bin/standard",
-    "test": "node node_modules/.bin/mocha"
+    "test": "node node_modules/.bin/mocha && npm run style",
+    "start": "node mashup-promise.js"
   },
   "keywords": [
     "github",

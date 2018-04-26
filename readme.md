@@ -10,6 +10,14 @@ export ACCESS_TOKEN_KEY='<YOUR VALUE>'
 export ACCESS_TOKEN_SECRET='<YOUR VALUE>'
 ```
 
-Using:
-* Mocha, Chai for tests
-* standard for style
+## Execute/Run
+* Run `node mashup-promise.js` or `npm start`
+
+## Test and Development
+* Mocha, Chai for tests - run `npm test` or `npm t`
+* standard for style - run `npm run style`
+
+# Notes
+* Futher work on the tests is necessary.
+
+

@@ -27,7 +27,8 @@ function githubSearch (criteria) {
       }
 
       // let githubResults = body.items.slice(0, numberResults)
-      let githubResults = JSON.parse(body).items.slice(0, numberResults)
+      console.log('... body.message:', body.message)
+      let githubResults = JSON.parse(body).items.slice(0, numberResults) || []
 
       let results = githubResults.map((project) => {
         return {
