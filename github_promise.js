@@ -4,6 +4,11 @@ const request = require('request')
 const Promise = require('promise')
 
 function githubSearch (criteria) {
+  // return immediately if no criteria provided
+  if (!criteria) {
+    return new Promise((resolve) => resolve([]))
+  }
+
   let promise = new Promise((resolve, reject) => {
     // Setup Github search options, sort by updated in asc order
     const options = {
@@ -27,7 +32,8 @@ function githubSearch (criteria) {
       }
 
       // let githubResults = body.items.slice(0, numberResults)
-      console.log('... body.message:', body.message)
+      // console.log('... body.message:', body.message)
+      // console.log('... body:', body)
       let githubResults = JSON.parse(body).items.slice(0, numberResults) || []
 
       let results = githubResults.map((project) => {

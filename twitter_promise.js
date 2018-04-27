@@ -4,12 +4,21 @@ const Twitter = require('twitter')
 const Promise = require('promise')
 
 function twitterSearch (githubprojects) {
-  // console.log('\n\t...in twitter search: githubprojects:', githubprojects.map(i => { return i.name }))
+  let promises = []
+  if (!githubprojects) {
+    console.log('..... in no github projects()')
+    // return [new Promise((resolve) => resolve([]))]
+    let promise = new Promise((resolve, reject) => {
+      console.log('.....in promise')
+      resolve({})
+      promises.push(promise)
+    })
+    return promises
+  }
 
-  var promises = []
   // githubprojects.forEach(project => {
   for (var i = 0; i < githubprojects.length; i++) {
-    // console.log(`\n ** .. ** .. for ${i} `)
+    console.log(`\n ** .. ** .. for ${i} `)
     let project = githubprojects[i]
 
     let promise = new Promise((resolve, reject) => {
@@ -38,7 +47,7 @@ function twitterSearch (githubprojects) {
     promises.push(promise)
   }
 
-  // console.log('\n ** .. ** .. after for')
+  console.log('\n ** .. ** .. after for')
 
   return promises
 }

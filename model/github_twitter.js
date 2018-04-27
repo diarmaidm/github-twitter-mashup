@@ -1,4 +1,4 @@
-'use strict'
+// 'use strict'
 
 // const GithubTwitter = class {
 //   constructor () {
@@ -9,4 +9,4 @@
 //   }
 // }
 
-module.exports = GithubTwitter
+// module.exports = GithubTwitter
