@@ -6,19 +6,12 @@ const Promise = require('promise')
 function twitterSearch (githubprojects) {
   let promises = []
   if (!githubprojects) {
-    console.log('..... in no github projects()')
-    // return [new Promise((resolve) => resolve([]))]
-    let promise = new Promise((resolve, reject) => {
-      console.log('.....in promise')
-      resolve({})
-      promises.push(promise)
-    })
-    return promises
+    return new Promise((resolve) => resolve([]))
   }
 
   // githubprojects.forEach(project => {
   for (var i = 0; i < githubprojects.length; i++) {
-    console.log(`\n ** .. ** .. for ${i} `)
+    // console.log(`\n ** .. ** .. for ${i} `)
     let project = githubprojects[i]
 
     let promise = new Promise((resolve, reject) => {
@@ -30,26 +23,20 @@ function twitterSearch (githubprojects) {
       })
 
       client.get('search/tweets', { q: project.full_name }, function (error, tweets, response) {
-        // console.log('\nin twitter client 9.2 = = = = = = = = = twitter search criteria:', project.full_name)
-
         if (error) {
-          // console.log('\n..... error:', error)
           reject(error)
         }
 
         // TODO Only add required fields/data to the object.
         project.tweets = tweets
 
-        // console.log('\n\t...in twitter search before resolve')
         resolve(project)
       })
     })
     promises.push(promise)
   }
 
-  console.log('\n ** .. ** .. after for')
-
-  return promises
+  return Promise.all(promises)
 }
 
 module.exports = twitterSearch

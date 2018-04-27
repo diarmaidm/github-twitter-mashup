@@ -31,9 +31,6 @@ function githubSearch (criteria) {
         reject(err)
       }
 
-      // let githubResults = body.items.slice(0, numberResults)
-      // console.log('... body.message:', body.message)
-      // console.log('... body:', body)
       let githubResults = JSON.parse(body).items.slice(0, numberResults) || []
 
       let results = githubResults.map((project) => {
